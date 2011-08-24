@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + "/../../spec_helper"
+require File.expand_path("../../../spec_helper", __FILE__)
 
 describe Radiant::Exporter do
   dataset :pages_with_layouts, :users_and_pages, :snippets
