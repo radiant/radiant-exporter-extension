@@ -20,11 +20,4 @@ Gem::Specification.new do |s|
   s.files         = Dir["**/*"] - ignores
   s.test_files    = Dir["test/**/*","spec/**/*","features/**/*"] - ignores
   s.require_paths = ["lib"]
-
-  # s.add_dependency "some_gem", "~> 1.0.0"
-
-  s.post_install_message = %{
-  Add this to your radiant project with:
-    config.gem "radiant-exporter-extension", :version => "~> #{RadiantExporterExtension::VERSION}"
-  }
 end
