@@ -1,3 +1,8 @@
+if RUBY_VERSION > "1.9"
+  require "yaml"
+  YAML::ENGINE.yamler = "syck"
+end
+
 module Radiant
   class Exporter
     cattr_accessor :exportable_models
