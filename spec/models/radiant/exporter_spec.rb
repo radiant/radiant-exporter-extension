@@ -1,7 +1,7 @@
 require File.expand_path("../../../spec_helper", __FILE__)
 
 describe Radiant::Exporter do
-  dataset :pages_with_layouts, :users_and_pages, :snippets
+  dataset :pages_with_layouts, :users_and_pages
   
   let(:exporter){ Radiant::Exporter }
   let(:exported_content){ exporter.export }
@@ -19,8 +19,8 @@ describe Radiant::Exporter do
     exported_hash['Users'][user_id(:admin)]['name'].should == users(:admin).name
   end
   
-  its(:exportable_models){ should == [Radiant::Config, User, Page, PagePart, PageField, Snippet, Layout] }
-  its(:template_models){ should == [Layout, Snippet, Page, PagePart, PageField] }
+  its(:exportable_models){ should == [Radiant::Config, User, Page, PagePart, PageField, Layout] }
+  its(:template_models){ should == [Layout, Page, PagePart, PageField] }
   its(:ignored_template_attributes){ should == [:lock_version, :created_at, :updated_at, :created_by_id, :updated_by_id] }
   it "should allow setting exportable_models" do
     exporter.exportable_models = [Page]
