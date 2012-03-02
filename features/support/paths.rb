@@ -1,14 +1,22 @@
-def path_to(page_name)
-  case page_name
+module NavigationHelpers
   
-  when /the homepage/i
-    root_path
+  # Extend the standard PathMatchers with your own paths
+  # to be used in your features.
+  # 
+  # The keys and values here may be used in your standard web steps
+  # Using:
+  #
+  #   When I go to the "snippets" admin page
+  # 
+  # would direct the request to the path you provide in the value:
+  # 
+  #   admin_snippets_path
+  # 
+  PathMatchers = {} unless defined?(PathMatchers)
+  PathMatchers.merge!({
+    /export/i => 'export_path'
+  })
   
-  when /login/i
-    login_path
-  # Add more page name => path mappings here
-  
-  else
-    raise "Can't find mapping from \"#{page_name}\" to a path."
-  end
 end
+
+World(NavigationHelpers)
