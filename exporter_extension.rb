@@ -1,5 +1,7 @@
+require 'radiant-exporter-extension/version'
+
 class ExporterExtension < Radiant::Extension
-  version "1.0"
+  version RadiantExporterExtension::VERSION
   description "Export your models from Radiant"
   url "http://github.com/radiant/radiant"
   

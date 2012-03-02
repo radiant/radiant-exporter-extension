@@ -6,9 +6,9 @@ end
 module Radiant
   class Exporter
     cattr_accessor :exportable_models
-    @@exportable_models = [Radiant::Config, User, Page, PagePart, PageField, Snippet, Layout]
+    @@exportable_models = [Radiant::Config, User, Page, PagePart, PageField, Layout]
     cattr_accessor :template_models
-    @@template_models = [Layout, Snippet, Page, PagePart, PageField]
+    @@template_models = [Layout, Page, PagePart, PageField]
     cattr_accessor :ignored_template_attributes
     @@ignored_template_attributes = [:lock_version, :created_at, :updated_at, :created_by_id, :updated_by_id]
     
